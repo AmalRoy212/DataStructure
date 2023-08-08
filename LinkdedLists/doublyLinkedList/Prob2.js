@@ -6,7 +6,7 @@ class Node{
   }
 }
 
-class DList{
+class List{
 
   constructor(){
     this.head = null;
@@ -19,7 +19,7 @@ class DList{
     if(this.head === null){
       this.head = newNode;
     }else{
-      newNode.prev = this.tail;
+      newNode.prev = this.tail
       this.tail.next = newNode;
     }
     this.tail = newNode;
@@ -36,16 +36,12 @@ class DList{
     console.log("\nHead ", this.head.data, " Tail ", this.tail.data, "\n");
   }
 
+  reverse(){
+    let current = this.tail;
+
+    while(current){
+      
+    }
+  }
+
 }
-
-let newDList = new DList ();
-
-newDList.append(19);
-newDList.append(55);
-newDList.append(8);
-newDList.append(13);
-newDList.append(10);
-
-newDList.print();
-
-console.log(newDList);

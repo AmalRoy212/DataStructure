@@ -60,19 +60,38 @@ class List {
   printReverse(){
     this.reverseHelper(this.head);
   }
+
+  removeDuplicates(){
+    let current = this.head;
+    while(current){
+      let newCurrent = current.next
+      while(newCurrent){
+        if (current.data === newCurrent.data){
+          newCurrent.next = newCurrent.next.next;
+        }
+        newCurrent = newCurrent.next;
+      }
+      current = current.next;
+    }
+  }
 }
 
 let newList = new List ()
 
-newList.append(80);
-newList.append(40);
-newList.append(30);
-newList.append(20);
 newList.append(10);
+newList.append(20);
+newList.append(30);
+newList.append(40);
+newList.append(10);
+newList.append(60);
 
 newList.print();
 
-newList.sort();
+// newList.sort();
 
+// newList.print();
+// newList.printReverse()
+newList.removeDuplicates();
 newList.print();
-newList.printReverse()
+
+
