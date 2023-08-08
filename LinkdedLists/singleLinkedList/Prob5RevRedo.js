@@ -1,28 +1,28 @@
-class Node{
-  constructor(data){
+class Node {
+  constructor(data) {
     this.data = data;
     this.next = null
   }
 }
 
 class List {
-  constructor(){
+  constructor() {
     this.head = null;
     this.tail = null
   }
 
-  append(data){
-    let newNode = new Node (data);
+  append(data) {
+    let newNode = new Node(data);
 
-    if(this.head === null){
+    if (this.head === null) {
       this.head = newNode;
-    }else{
+    } else {
       this.tail.next = newNode
     }
     this.tail = newNode;
   }
 
-  print(){
+  print() {
     let current = this.head;
 
     while (current) {
@@ -33,12 +33,12 @@ class List {
     console.log("\nHead ", this.head.data, " Tail ", this.tail.data, "\n");
   }
 
-  reverseList(){
+  reverse(){
     let current = this.head;
     let prev = null;
     let next = null;
 
-    this.tail = current
+    this.tail = current;
 
     while(current){
       next = current.next;
@@ -48,7 +48,6 @@ class List {
     }
 
     this.head = prev;
-
   }
 
 }
@@ -56,13 +55,13 @@ class List {
 let newList = new List();
 
 newList.append(10);
-newList.append(9);
-newList.append(80);
-newList.append(15);
+newList.append(20);
 newList.append(30);
+newList.append(40);
+newList.append(50);
 
 newList.print();
 
-newList.reverseList();
+newList.reverse();
 
 newList.print();
